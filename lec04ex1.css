@@ -1,0 +1,9 @@
+p{font-size: 10pt; font-family:"돋움";}
+.red1{color:red; font-style:italic;}
+strong.red1{font-size:12pt}
+#next {color:blue; text-align:center}
+
+a:link{color:blue;}
+a:visited{color:green;}
+h3:before{content:"◆";color:blue}
+h3:after{content:"(©sblim)";font-size:10pt}
