@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>도서 구입 요청 예제</title>
+    </head>
+    <body>
+        <h2>도서 구입 요청</h2>
+        <form method="post" action="form_app.js">
+            도서명 : <select name="book" size="1">
+                <option value="book1">멀티미디어배움터</option>
+                <option value="book2">인터넷배움터</option>
+                <option value="book3">컴퓨터 기술 IT이해</option>
+            </select><br>
+            선호도 : 1<input type="range" min="1" max="5" value="3" step="1">5<br>
+            가격 : <input type="text" name="price">원<br>
+            권수 : <input type="text" name="books">권 <br>
+            <button type="submit" value="구입"></button>
+        </form>
+    </body>
+
+</html>
