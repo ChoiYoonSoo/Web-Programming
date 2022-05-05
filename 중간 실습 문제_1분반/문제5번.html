@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>문제5번</title>
+    </head>
+    <body>
+        <h3>캠핑장 예약하기</h3>
+        <form method="get" action="form_app.js">
+            <fieldset>
+                <legend>예약자 정보</legend>
+                예약자 : <input type="text" name="person"><br>
+                연락처 : <input type="tel" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"><br>
+                예약인원 : <select name="num" size="1">
+                    <option>2명</option>
+                    <option>3명</option>
+                    <option>4명</option>
+                    <option>5명</option>
+                    <option>6명</option>
+                </select><br>
+                캠핑종류 : <input type="radio" name="more" value="tent" checked>텐트
+                <input type="radio" name="more" value="kara">카라반
+                <input type="radio" name="more" value="car">차박<br>
+                추가사항 : <input type="checkbox" name="plus" value="babe">바베큐
+                <input type="checkbox" name="plus" value="swim">수영장
+                <input type="checkbox" name="plus" value="jun">전열기구
+            </fieldset>
+            <fieldset>
+                <legend>예약일</legend>
+                숙박 시작일 : <input type="date" value="연도-월-일"><br>
+                숙박일 : <select name="date" size="1">
+                    <option>1박2일</option>
+                    <option>2박3일</option>
+                    <option>3박4일</option>
+                </select>
+            </fieldset>
+            <input type="submit" value="예약">
+            <input type="reset" value="취소">
+            
+        </form>
+    </body>
+</html>
