@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>welcome to the JavaScript</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            document.write("Hello, welcome to the JavaScript world!"+"<br/><hr/>")
+
+            var index, name="모바일 웹";
+            var start = 0, end = 100.0;
+            var message, condition, sender, receiver;
+
+            var a = "3";
+            var b = 2;
+            c = a+3+b;
+            d=a+b;
+            document.write(c+"<br/>");
+            document.write(d+"<br/><hr/>");
+
+            var first_name="Steve";
+            var last_name="Jobs";
+
+            var full_name1 = first_name+""+last_name;
+            // full_name1:"SteveJobs"
+
+            var full_name2=last_name+","+first_name;
+            // full_name1:'Jobs,Steve'
+
+            document.write(first_name+"<br/>")
+            document.write(last_name+"<br/>")
+            document.write(full_name1+"<br/>")
+            document.write(full_name2+"<br/><hr/>")
+
+            var length = 123,length_num, length_str;
+
+            length_num = length+10;
+            length_str=length.toString()+10;
+
+            document.write("Length in Number: " +length_num+ "cm<br/>");
+            document.write("Length in String: " +length_str+ "cm"+"<br/>");
+            alert("HTML5 프로그래밍 \n웹사이트로 이동합니다.");
+
+            var num = parseInt(length_str)+20;
+            document.write("Length in integer: " +num+ "cm<hr/>");
+
+            var answer = confirm("주문한 서적을 결재하시겠습니까?");
+            document.write("<br/>Answer = " +answer+ "<br/>");
+
+            var answer = prompt("서적 제목을 입력해 주세요.","모바일 멀티미디어");
+            document.write("Answer = " +answer+ "<br/>")
+        </script>
+    </body>
+</html>
