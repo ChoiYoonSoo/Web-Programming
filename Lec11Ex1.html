@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>setTimeout()</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+             var stop = false;
+
+            function start() {
+                dom = document.getElementById("sec");
+                dom.value = parseInt(dom.value)+1;
+                if(!stop) setTimeout(start,1000);
+            }
+
+        </script>
+        <h2>Stopwatch</h2>
+        <form action="">
+            <input type="button" value="Start" onclick="stop = false; setTimeout(start,1000);"/>
+            <input type="button" value="Stop" onclick="stop = true";/>
+            <input type="reset"/><br><br>
+
+            <input id="sec" type="text" value="0" size="2"/>second
+        </form>
+    </body>
+</html>
