@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Colosseum</title>
+        <style type="text/css">
+            body{
+                font-family: "Malgun Gothic","맑은고딕" sans-serif;
+                overflow: scroll;
+            }
+           .wrap{
+               display: block;
+           }
+            .header{
+                display: flex;
+            }
+            .nav{
+                display: flex;
+            }
+            .nav>li{
+                margin-left: 80px;
+                margin-top: 5px;
+                font-size: 20pt;
+                list-style-type: none;
+            }
+            .first_img img{
+                margin-top: 10px;
+                margin-left: 20px;
+            }
+            .second_img{
+                margin-top: 10px;
+                margin-left: 130px;
+            }
+            a{
+                text-decoration-line: none;
+                font-size: 100%;
+            }
+            #menu{
+                color: black;
+            }
+            #menu:hover{
+                border: 3px solid black;
+                padding: 5px;
+            }
+            nav{
+                overflow: hidden;
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+    </head>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="first_img">
+                    <a href="https://www.smu.ac.kr/ko/index.do" target="_blank"><img src="logo1.png" width="170px" height="60px"></a>
+                </div>
+                <ul class="nav">
+                    <li><a href="home.html"><span id="menu">Home</span></a></li>
+                    <li><a href="data_wiki.html"><span id="menu">Data&nbsp;Wiki</span></a></li>
+                    <li><a href="share_hub.html"><span id="menu">Share&nbsp;Hub</span></a></li>
+                    <li><a href="colosseum.html"><span id=menu>Colosseum</span></a></li>
+                    <li><a href="forum.html"><span id="menu">Forum</span></a></li>
+                </ul>
+                <div class="second_img">
+                    <a href="https://swai.smu.ac.kr/" target="_blank"><img src="logo2.png" width="170px" height="60px"></a>
+                </div>
+            </header>
+            <nav>
+                <div class="logo_img">
+                    <img src="logo3.png" width="1500px" height="85px">
+                </div>
+            </nav>
+    </body>
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forum</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style type="text/css">
+            body{
+                font-family: "Malgun Gothic","맑은고딕" sans-serif;
+                overflow: scroll;
+            }
+           .wrap{
+               display: block;
+           }
+            .header{
+                display: flex;
+            }
+            .nav{
+                display: flex;
+            }
+            .nav>li{
+                margin-left: 80px;
+                margin-top: 5px;
+                font-size: 20pt;
+                list-style-type: none;
+            }
+            .first_img img{
+                margin-top: 10px;
+                margin-left: 20px;
+            }
+            .second_img{
+                margin-top: 10px;
+                margin-left: 130px;
+            }
+            a{
+                text-decoration-line: none;
+                font-size: 100%;
+            }
+            #menu{
+                color: black;
+            }
+            #menu:hover{
+                border: 3px solid black;
+                padding: 5px;
+            }
+            nav{
+                overflow: hidden;
+            }
+            .footer{
+                font-size: 10pt;
+                clear: both;
+                width: 100%;
+                height: auto;
+                padding: 60px 0; 
+                background-color: #3c3c3c;
+            }
+            .inner{
+                width: 100%;
+                max-width: 1300px;
+                height: 20px;
+            }
+            .layoutleft{
+                float: left;
+            }
+            .link{
+                width: 100%;
+                margin-left: -20px;
+                margin-top: -60px;
+            }
+            .link ul{
+                list-style-type: none;
+                display: flex;
+                width: 100%;
+            }
+            .color a{
+                color: rgb(244,174,64);
+            }
+            .color2 a{
+                color: #999;
+                margin-left: 20px;
+            }
+            .layoutright{
+                width: 0%;
+                float: right;
+            }
+            .btn{
+                margin-top: -40px;
+                margin-left: -30px;
+            }
+            .btn .btn1{
+                position:relative;
+                float:left;
+            }
+            .btn .btn1 button{
+                position:relative;
+                width:200px;
+                height:35px;
+                padding: 0 25px;
+                background:#232323;
+                color:#999;
+                font-size:13px;
+                line-height:1;
+                text-align:left;
+                border-radius:5px;
+                box-sizing:border-box;
+                cursor:pointer;
+            }
+            .btn .btn1 button:after{
+                content:'';
+                display:block;
+                position:absolute;
+                width:15px;
+                height:10px;
+                top:50%;
+                right:25px;
+                margin-top:-5px;
+                background:url('linkbutton.png') no-repeat center center;
+                transition:0.2s;
+            }
+            .btn .btn1 button:focus, .btn .btn1 button:hover{
+                color:#fff;
+            }
+            .btn .btn1 button.rotate{
+                background:#526379;
+                color:#b1c0d6;
+            }
+            .btn .btn1 button.rotate::after{
+                transform:rotateX(180deg);
+                transform-origin:center center;
+            }
+            .btn .btn1 ul{
+                left: 0;
+                display:block;
+                position:absolute;
+                width:100%;
+                height:auto;
+                bottom:0;
+                padding:12px 22px;
+                background:#f4c94a;
+                border-radius:5px;
+                box-sizing:border-box;
+                opacity:0;
+                overflow:hidden;
+                visibility:hidden;
+                transition:all .2s ease;
+                z-index:2;
+            }
+
+            .btn .btn1.show ul{
+                bottom:24px;
+                opacity:1;
+                visibility:visible;
+            }
+            .btn .btn1 ul li{
+                list-style-type: none;
+                float:none;
+                height: auto;
+                margin:8px 0;
+                padding: 0;
+                line-height:1;
+                color:#6b7794;
+                font-size:13px;
+                font-weight:400;
+            }
+            .btn .btn1 ul li a{
+                color:#526379;
+            }
+            .btn .btn1 ul li a:hover{
+                color:#333b3d;
+            }
+            button{
+                border: none;
+                transition: 0.2s ease;
+            }
+            .copyright{
+                clear: both;
+                padding: 0;
+            }
+            .copyright .info{
+                display: block;
+                text-align: left;
+                margin-bottom: 12px;
+                margin-left: 20px;
+                color: #999;
+            }
+            .copyright .info2{
+                display: block;
+                text-align: left;
+                color: #999;
+                margin-left: 20px;
+                margin-top: 30px;
+            }
+            .writer>a{
+                padding-left: 100px;
+            }
+            
+        </style>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+    </head>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="first_img">
+                    <a href="https://www.smu.ac.kr/ko/index.do" target="_blank"><img src="logo1.png" width="170px" height="60px"></a>
+                </div>
+                <ul class="nav">
+                    <li><a href="home.html"><span id="menu">Home</span></a></li>
+                    <li><a href="data_wiki.html"><span id="menu">Data&nbsp;Wiki</span></a></li>
+                    <li><a href="share_hub.html"><span id="menu">Share&nbsp;Hub</span></a></li>
+                    <li><a href="colosseum.html"><span id=menu>Colosseum</span></a></li>
+                    <li><a href="forum.html"><span id="menu">Forum</span></a></li>
+                </ul>
+                <div class="second_img">
+                    <a href="https://swai.smu.ac.kr/" target="_blank"><img src="logo2.png" width="170px" height="60px"></a>
+                </div>
+            </header>
+            <nav>
+                <div class="logo_img">
+                    <img src="logo3.png" width="1500px" height="85px">
+                </div>
+                <div class="board_wrap">
+                    <div class="board_title">
+                        <strong>질의 응답 게시판</strong>
+                    </div>
+                    <div class="board_list_wrap">
+                        <div class="board_list">
+                            <div class="top">
+                                <div class="num">일련번호</div>
+                                <div class="title">제목</div>
+                                <div class="writer">내용</div>
+                                <div class="date">작성일</div>
+                                <div class="count">추천수</div>
+                            </div>
+                            <div>
+                                <div class="num">
+                                    11
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(40);
+                                        document.write(data);
+                                    </script>
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(41);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(42);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(43);
+                                        document.write(data);
+                                    </script>
+                                </div>
+
+
+                            </div>
+                            <div>
+                                <div class="num">
+                                    10
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(36);
+                                        document.write(data);
+                                    </script>
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(37);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(38);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(39);
+                                        document.write(data);
+                                    </script>
+                                </div>
+
+
+                            </div>
+                            <div>
+                                <div class="num">9
+                                    
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(32);
+                                        document.write(data);
+                                    </script>
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(33);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(34);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(35);
+                                        document.write(data);
+                                    </script>
+                                </div>
+
+
+                            </div>
+                            <div>
+                                <div class="num">8
+                                    
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(28);
+                                        document.write(data);
+                                    </script>
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(29);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(30);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(31);
+                                        document.write(data);
+                                    </script>
+                                </div>
+
+
+                            </div>
+                            <div>
+                                <div class="num">7
+                                    
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(24);
+                                        document.write(data);
+                                    </script>
+                                    
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(25);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(26);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(27);
+                                        document.write(data);
+                                    </script>
+                                </div>
+
+
+                            </div>
+                            <div>
+                                <div class="num">6
+                                    
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(20);
+                                        document.write(data);
+                                    </script>
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(21);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(22);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(23);
+                                        document.write(data);
+                                    </script>
+                                </div>
+
+
+                            </div>
+                            <div>
+                                <div class="num">5
+                                    
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(16);
+                                        document.write(data);
+                                    </script>
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(17);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(18);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(19);
+                                        document.write(data);
+                                    </script>
+                                </div>
+
+
+                            </div>
+                            <div>
+                                <div class="num">4
+                                    
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(12);
+                                        document.write(data);
+                                    </script>
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(13);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(14);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(15);
+                                        document.write(data);
+                                    </script>
+                                </div>
+
+                            
+                            </div>
+                            <div>
+                                <div class="num">3
+                                    
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(8);
+                                        document.write(data);
+                                    </script>
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(9);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(10);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(11);
+                                        document.write(data);
+                                    </script>
+                                </div>
+
+                            </div>
+                            <div>
+                               
+                                <div class="num">2
+                                    
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(4);
+                                        document.write(data);
+                                    </script>
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(5);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(6);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(7);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                            
+
+
+                            </div>
+                            <div>
+                                <div class="num">
+                                    1
+                                </div>
+                                <div class="title"><a href="view.html">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(0);
+                                        document.write(data);
+                                    </script>
+                                </a></div>
+                                <div class="writer">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(1);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="date">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(2);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                                <div class="count">
+                                    <script type="text/javascript">
+                                        var data = sessionStorage.getItem(3);
+                                        document.write(data);
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="board_page">
+                            <a href="#" class="bt first"><<</a>
+                            <a href="#" class="bt prev"><</a>
+                            <a href="#" class="num on">1</a>
+                            <a href="#" class="num">2</a>
+                            <a href="#" class="num">3</a>
+                            <a href="#" class="num">4</a>
+                            <a href="#" class="num">5</a>
+                            <a href="#" class="bt next">></a>
+                            <a href="#" class="bt last">>></a>
+                        </div>
+                        <div class="bt_wrap">
+                            <a href="write.html">등록</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <footer class="footer">
+                <div class="inner">
+                    <div class="layoutleft">
+                        <div class="link">
+                            <ul>
+                                <li class="color">
+                                    <a href="https://www.smu.ac.kr/ko/intro/privacyPolicy.do" target="_blank">개인정보처리방침</a>
+                                </li>
+                                <li class="color2">
+                                    <a href="https://swai.smu.ac.kr/98/03.php" target="_blank">이메일주소무단수집거부</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="layoutright">
+                        <div class="btn">
+                            <div class="btn1">
+                                <button class>관련 사이트</button>
+                                <ul>
+                                    <li><a href="https://www.smu.ac.kr/" target="_blank">상명대학교</a></li>
+                                    <li><a href="http://www.swuniv.kr/" target="_blank">소프트웨어중심대학협의회</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <div class="info">
+                            <p>(0316) 서울시 종로구 홍지문 2길 20 상명대학교 SW중심대학사업단</p>
+                        </div>
+                        <div class="info2">
+                            <p>COPYRIGHT BY SANGMYUNG UNIVERSITY.ALL RIGHTS RESERVED.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+            <script type="text/javascript">
+                $(document).ready(function(){
+	            $('.btn1').find('button').bind('click', function(){
+		            if ($(this).parents('.btn1').hasClass('show') == false){
+			                $(this).parents('.btn1').removeClass('show');
+			                $(this).parents('.btn1').addClass('show');
+			                $(this).addClass('rotate');
+		            } else{
+			                $(this).parents('.btn1').removeClass('show');
+			                $(this).removeClass('rotate');
+		            }
+		            return false;
+	            });
+            });
+
+            </script>
+            <script type="text/javascript">
+
+                var sessionStorage = window.sessionStorage;
+                var board = new Array();
+
+                board[0] = ["안녕하세요","Datawiki에 오신 것을 환영합니다.","2022.05.01","10"];
+                board[1] = ["관리자소개","Datawiki의 관리자를 소개 합니다.","2022.05.05","5"];
+                board[2] = ["최신 뉴스","Datawiki는 상명대 천안캠퍼스에서 주관하는 데이터 공유 사이트 입니다.","2022.05.06","22"];
+                board[3] = ["공지사항","Datawiki가 새롭게 단장됩니다. 더욱 개선된 사이트를 기대해 주세요.","2022.05.08","100"];
+                board[4] = ["추가 공지 사항","Datawiki를 새롭게 개선하기 위한 메니저를 공모합니다. ","2022.05.10","1"];
+                board[5] = ["2022년 데이터위키 공모전","2022년 데이터 위키는 이미지 인식 주제로 진행합니다.","2022.05.12","44"];
+                board[6] = ["공모전 종료 안내","2022년 데이터 위키 공모전이 성공리에 마감 되었습니다. ","2022.05.14","50"];
+                board[7] = ["2023년 데이터 위키 공모전","2023년 데이터 위키 공모전을 소개 합니다.","2022.05.16","49"];
+                board[8] = ["학기 종료 안내","22년 1학기 종료까지 이제 6주 남았습니다. ","2022.05.18","17"];
+                board[9] = ["튜토리얼 공지","tensorflow와 keras의 라이브러리를 이용하여 같이 공부해 봅시다.","2022.05.19","84"];
+                board[10] = ["신규 데이터 요청","새로운 데이터가 필요하신 분은 언제든 요청 바랍니다.","2022.05.21","3"];
+
+                var x = 0;
+                for (var i = 0; i < 11; i++) {
+                    for (var j = 0; j < 4; j++) {
+                        sessionStorage.setItem(x, board[i][j]);
+                        x++;
+                    }
+                }
+            </script>
+    </body>
+</html>
